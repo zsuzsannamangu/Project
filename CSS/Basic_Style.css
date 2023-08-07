@@ -1,0 +1,110 @@
+body {
+    background-color: #ffff;
+}
+
+h1 {
+    color: rgba(8, 141, 165, 1);
+    margin-left: 100px;
+    text-shadow: 1px, 5px, 4px, rgba(0, 0, 0, 0.6)
+}
+
+.container {
+    width: 450px;
+    height: 450px;
+    background-color: #faebd7;
+    border: 2px solid black;
+    border-radius: 5%;
+}
+
+/*_____________________________
+SELECT ALL SQUARES IN THE ARRAY
+_____________________________*/
+
+.container .squares:nth-child(-n+4) {
+    background-image: url("../Images/Icons/Icon_1.png");
+    color: #fff;
+    float: left;
+    width: 100px;
+    height: 100px;
+    margin: 5px;
+    border: 1px solid black;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: transform .5s ease-in-out;
+}
+
+/*_____________________________
+SELECT ALL SQUARES PARAGRAPHS IN THE ARRAY
+_____________________________*/
+
+.container .squares:nth-child(-n+4) p{
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 1.5em;
+    font-weight: 900;
+    text-align: center;
+    margin: 0;
+    text-shadow: 2px 1px 4px rgba(0, 0, 0, 0.8);
+}
+
+/*_____________________________
+INDIVIDUALLY SELECT A SQUARE IN THE ARRAY
+_____________________________*/
+
+.squares:nth-child(1) {
+    background: #4240ff;
+}
+
+.squares:nth-child(2) {
+    background: #98b9dd;
+}
+
+.squares:nth-child(3) {
+    background: #4fb462;
+}
+
+.squares:nth-child(4) {
+    background: #19c38a;
+}
+
+/*_____________________________
+HOVER, TRANSLATE AND TRANSFORM EFFECTS
+_____________________________*/
+
+.container .squares:nth-child(-n+4):hover {
+    background-image: url("../Images/Icons/Icon_2.png");
+    transform: scale(.5);
+    animation-name: race;
+    animation-duration: 2.5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: cubic-bezier(2.5, .2, .3, 2);
+}
+
+.squares:nth-child(1):hover {
+    background: #a7a6dd;
+}
+
+.squares:nth-child(2):hover {
+    background: #a6b7c8;
+}
+
+.squares:nth-child(3):hover {
+    background: #a8e2b2;
+}
+
+.squares:nth-child(4):hover {
+    background: #9ec1b5;
+}
+
+/*___________________________
+ANIMATION EFFECT
+___________________________*/
+
+@keyframes race { /*race is the name of the effect defined above*/
+    0%, 100% { /* animation starts at 0% and ends at 100% */
+        transform: translateY(0px); /*move on the Y axis*/
+        background-image: url("../Images/Icons/Icon_2.png")
+    }
+    50% { /*halfway thru it it will do sg diff*/
+        transform: translateY(300px); /*positive means it's going down, negative is up*/
+    }
+}
